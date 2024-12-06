@@ -5,8 +5,10 @@ This documentation provides a step-by-step guide to deploying a MERN stack appli
 Key Details
 Load Balancer DNS: ShivamTMALB-192579021.us-east-1.elb.amazonaws.com
 Domain: theshiv.xyz
+
+
 Deployment Architecture
-Below is the deployment architecture diagram for this setup:
+Below is the deployment architecture for this setup:
 
 
 The architecture includes:
@@ -24,31 +26,29 @@ Assign a security group with HTTP (port 80) and HTTPS (port 443) access.
 SSH into the instance.
 Install Dependencies:
 
-Install Node.js, NPM, and MongoDB client.
+Install Node.js, NPM
 Use the following commands:
 bash
-Copy code
 sudo yum update -y
 sudo yum install -y nodejs npm git
-Clone the Repository:
+
 
 Clone your MERN application repository:
 bash
-Copy code
 git clone https://github.com/UnpredictablePrashant/TravelMemory
 cd TravelMemory
 Configure the Backend:
 
+
 Navigate to the backend folder:
 bash
-Copy code
 cd backend
 Update the .env file with your database connection string and application settings.
-Start the Application:
+Start the Application:'
+
 
 Start the backend server:
 bash
-Copy code
 npm install
 npm start
 Ensure the backend is running on port 3000.
@@ -56,19 +56,15 @@ Set Up the Frontend:
 
 Navigate to the frontend folder:
 bash
-Copy code
 cd ../frontend
-Update the urls.js file to point to your backend API endpoint.
-Build the production frontend files:
+Build the production frontend files to create and update the .env file
 bash
-Copy code
 npm install
 npm run build
 Configure Nginx:
 
 Set up a reverse proxy using Nginx to route traffic:
 bash
-Copy code
 sudo yum install -y nginx
 sudo nano /etc/nginx/nginx.conf
 Example configuration:
@@ -88,8 +84,9 @@ server {
 }
 Restart Nginx:
 bash
-Copy code
 sudo systemctl restart nginx
+
+
 2. Create an AMI and Launch Additional Instances
 Create an AMI:
 
